@@ -271,7 +271,7 @@ Use Cases
 ::: {.column width="70%"}
 
 ::: {.fragment .semi-fade-out fragment-index=1}
--   Previous automation processes were limited to HACH systems, all other QA/QC checks were done manually (Time/date, missing data)
+-   Previous QA/QC process was almost entirely manual (checking time/date, missing data)
 :::
 
 ::: {.fragment .fade-in fragment-index=1}
@@ -286,7 +286,7 @@ Use Cases
 :::
 
 ::: {.fragment .fade-in fragment-index=4}
--   Processing time after automation: `2-4 weeks`
+-   Processing time after automation: `2-3 weeks`
 :::
 :::
 
@@ -307,7 +307,7 @@ Use Cases
 
 ## Presentations
 
-- This entire presentation was created using R and RStudio!
+- This entire presentation was created using R!
 
 - The code used to create this presentation is available on GitHub
 
@@ -315,7 +315,6 @@ Use Cases
 PDF, and Word formats
 
 ```{r, echo=TRUE, eval=FALSE}
----
 title: "R for Beginners"
 subtitle: "FLMS 37th Annual Technical Symposium"
 author: 
@@ -328,27 +327,9 @@ format:
     date-format: "MMMM D, YYYY"
     theme: ["styles.scss"]
     logo: www/pinellas_logo.png
----
 ```
 
 ![](www/slide1.png){style="border: 2px solid black; width: 200px;" .absolute top="310" left="700" width="400" height="200"} 
-
-
-
-## AI and Coding
-
--  AI is a powerful tool for generating code, but it is not perfect
-
--  You can use it to help learn code but you should try to figure it out yourself first
-
-:::{.fragment .fade-in}
-- You should have a basic understanding of the code and know how to problem-solve
-
-![](www/vibe2.png){.absolute top="350" left="715" width="300" height="300"}
-:::
-
-![](www/gpt.png){.absolute top="400" left="0" width="400" height="110"}
-![](www/copilot.png){.absolute top="400" left="405" width="300" height="200"}
 
 
 ##  {background-color="#006791"}
@@ -494,7 +475,7 @@ log(100) # Natural log
 |--------|-----------|
 | `x < y` | Less than |
 | `x > y` | Greater than|
-| `==` | Equal to |
+| `x == y` | Equal to |
 | `x <= y` | Less than or equal to |
 | `x >= y` | Greater than or equal to |
 | `x != y` | Not equal to |
@@ -1280,7 +1261,7 @@ Tidy Data
 
 ## What is Tidy Data?
 
-- A consistent way of organizing data to make it easier to work with.
+- A consistent way of organizing data to make it easier to work with (i.e., machine-readable)
 - 80% of of data analysis is spent cleaning and preparing the data (Dasu and Johnson 2003).
 - It's better to make a dataset tidy from the start rather than trying to fix it later.
 - The `tidyverse` is built around the idea of tidy data.
