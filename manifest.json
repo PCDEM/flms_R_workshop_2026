@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "en_US",
-  "platform": "4.5.2",
+  "platform": "4.6.1",
   "metadata": {
     "appmode": "quarto-static",
     "primary_rmd": "pres.qmd",
@@ -16,7 +16,7 @@
   "packages": null,
   "files": {
     ".RData": {
-      "checksum": "b583d23c74e662893a1b68ded05807c5"
+      "checksum": "8e203f7d868462ccca10917a48aa0a02"
     },
     "_extensions/quarto-ext/fontawesome/_extension.yml": {
       "checksum": "33184894a50d102978886babb3c5a27f"
@@ -64,16 +64,16 @@
       "checksum": "5bc98105869e551d97dcec449c595bf6"
     },
     "pres.html": {
-      "checksum": "3045ef89c4d853b989754d6dec310fc4"
+      "checksum": "5b4ae4fac16157904a026adb42b23d62"
     },
     "pres.qmd": {
-      "checksum": "19c32f518c9a61d29daef2409dcac3b1"
+      "checksum": "7a3bed98556b355ef254ff8080b3dd27"
     },
     "pres_files/figure-revealjs/unnamed-chunk-80-1.png": {
-      "checksum": "6e343f1232a89cd0e679ba8c52cb3c86"
+      "checksum": "2cadbd21049391a62abb023c99af241c"
     },
     "pres_files/figure-revealjs/unnamed-chunk-81-1.png": {
-      "checksum": "842e4f7c3e8755e7166f3c159c43236d"
+      "checksum": "3d0e1ba9361b4ee784ec404c5993ce44"
     },
     "pres_files/libs/clipboard/clipboard.min.js": {
       "checksum": "15f52a1ee547f2bdd46e56747332ca2d"
@@ -125,6 +125,9 @@
     },
     "pres_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css": {
       "checksum": "15634bcf2e68342d4ad2dfa704d543f6"
+    },
+    "pres_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css": {
+      "checksum": "64a204ab8560d761af7679ceaba22944"
     },
     "pres_files/libs/quarto-html/tabby.min.js": {
       "checksum": "c4219bb6375131a945d7e4bfc49c5f35"
@@ -328,7 +331,7 @@
       "checksum": "d3338b02a8295030cbd5ddba3a6717d2"
     },
     "renv.lock": {
-      "checksum": "a9e6d9ac25f5e89ca53802cae143e7a9"
+      "checksum": "8a317b809a6bc91b3f9c8ee52a2a7663"
     },
     "slides.pdf": {
       "checksum": "cf13a699ca8c510a7778174f37505e3d"
