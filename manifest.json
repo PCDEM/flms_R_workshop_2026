@@ -4,7 +4,7 @@
   "platform": "4.5.2",
   "metadata": {
     "appmode": "quarto-static",
-    "primary_rmd": "install_instructions.qmd",
+    "primary_rmd": "pres.qmd",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
@@ -326,6 +326,9 @@
     },
     "README.md": {
       "checksum": "d3338b02a8295030cbd5ddba3a6717d2"
+    },
+    "renv.lock": {
+      "checksum": "a9e6d9ac25f5e89ca53802cae143e7a9"
     },
     "slides.pdf": {
       "checksum": "cf13a699ca8c510a7778174f37505e3d"
