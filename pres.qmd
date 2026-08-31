@@ -13,10 +13,8 @@ format:
     logo: www/pinellas_logo.png
 ---
 
-```{r}
 
-library(knitr)
-library(rmarkdown)
+```{r}
 
 # Function for a countdown on the exercise slides:
 cntdn <- function(){
@@ -38,7 +36,7 @@ cntdn <- function(){
 
 ## Outline
 
-If you want to follow along with the slides (optional) `https://rpubs.com/aman11/flms_R_workshop_2026`
+If you want to follow along with the slides (optional) `https://rpubs.com/aman11/flms_r_workshop_2026`
 
 -   Introductions
 -   R vs. RStudio
@@ -147,7 +145,7 @@ R is the engine
 
 RStudio is the informational display
 
-![](www/engine.png){.absolute top="230" left="550" width="400" height="400"}
+![](www/r_engine.png){.absolute top="230" left="550" width="500" height="350"}
 :::
 
 ## CRAN
@@ -305,7 +303,7 @@ Use Cases
 
 [https://pcdem.shinyapps.io/dashboard/](https://pcdem.shinyapps.io/dashboard/)
 
-![](www/dashboard.png){.absolute top="140" left="0" width="950" height="500"}
+![](www/dashboard.png){.absolute top="140" left="0" width="950" height="480"}
 ![](www/shiny.png){.absolute top="140" left="950" width="140" height="155"}
 ![](www/rmd.png){.absolute top="295" left="950" width="140" height="155"}
 
@@ -315,7 +313,7 @@ Use Cases
 
 - The code used to create this presentation is available on GitHub
 
-- The presentation is in `Quarto` format, which allows for easy conversion to HTML, 
+- The presentation is in [quarto](https://quarto.org/) format, which allows for easy conversion to HTML, 
 PDF, and Word formats
 
 ```{r, echo=TRUE, eval=FALSE}
@@ -352,7 +350,7 @@ Installing R & RStudio
 
 - Follow the installation instructions
 
-![](www/Rdownload.png){.absolute top="370" left="0" width="720" height="200"}
+![](www/Rdownload.png){.absolute top="370" left="0" width="800" height="150"}
 
 
 ## Installing RStudio
@@ -470,8 +468,13 @@ log(100) # Natural log
 ```
 
 ```{r, echo=TRUE}
-6*4/(2^2*3)-2 # PEMDAS
+6/3*4 # PEMDAS
 ```
+
+```{r, echo=TRUE}
+6/(3*4) # PEMDAS
+```
+
 
 ## Logical Statements & Booleans
 
@@ -705,23 +708,23 @@ that function
 ## Working with objects
 
 ```{r, echo=TRUE}
-e <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) # use c() to combine values into a vector
+nums <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) # use c() to combine values into a vector
 
-length(e) # How many things are in there?
+length(nums) # How many things are in there?
 ```
 
 ```{r, echo=TRUE}
-sum(e)/length(e) # Hand calculate mean
+sum(nums)/length(nums) # Hand calculate mean
 ```
 
 ```{r, echo=TRUE}
-mean(e) # R function to calculate mean
+mean(nums) # R function to calculate mean
 ```
 
 ```{r, echo=TRUE}
-e <- data.frame(x = 1:5,
+nums <- data.frame(x = 1:5,
                 y = 11:15)
-e
+nums
 ```
 
 ```{r, echo=TRUE, error=TRUE}
@@ -746,7 +749,7 @@ about what went wrong
 - To get the mean of `y` we need to "index" `e` using the `$` operator
 
 ```{r, echo=TRUE}
-mean(e$y)
+mean(nums$y)
 ```
 
 - R will look for named objects in the environment
@@ -902,40 +905,17 @@ library(package2)
 :::
 
 
-## Setting Your Working Directory
-
-- Your working directory is where all your files live
-- R does not know where your files are unless you tell it
-- If you want to use any data that does not come with a package, you need to tell
-R where it lives
-
-::: {.fragment .fade-in fragment-index=1}
-```{r, echo=TRUE}
-# The working directory where R will look for files 
-getwd()
-```
-:::
-                                                                                
-<br>
-
-::: {.fragment .fade-in fragment-index=2}
-```{r, echo=TRUE, eval=FALSE}
-# Set the working directory to the folder where your files are
-setwd("C:/Users/YourName/Documents/YourProject")
-```
-:::
-
 
 ## Your Turn {background-color="#ffeeee"}
 
 1) Install and load the packages `tidyverse`, `psych`, and `palmerpenguins`
-using the `install.packages()` and `library()` functions.
+using the `install.packages()` and `library()` functions
 2) Make a vector of 50 random values with a mean and standard deviation of your 
 choice using the `rnorm()` function and assign it to a variable named `vec` 
-(hint: use `?rnorm` to read the argument descriptions).
-3) Get summary statistics for the vector using the `describe()` function.
-4) Use `[]` indexing to return the first 10 values of the vector.
-5) Plot your data using the `plot()` function.
+(hint: use `?rnorm` to read the argument descriptions)
+3) Use `[]` indexing to return the first 10 values of the vector
+4) Use `[]` indexing to return three values at varying positions
+5) Get summary statistics for the vector using the `describe()` function
 
 
 ```{r}
@@ -1239,17 +1219,15 @@ ggplot(data = penguins, mapping = aes(x = penguins$bill_length_mm,
 
 ## Your Turn {background-color="#ffeeee"}
 
-1) Find the minimum value of `flipper_length_mm`
+1) Find the average value of `flipper_length_mm`
 
-2) Find the maximum value of `body_mass_g`
+2) Extract the species column using `$` then `select()` and assign each to a variable
+  (hint: for tidyverse, check the documentation for `select()`)
 
-3) Filter the data by selecting any two columns using the column position or `$` operator
+3) Inspect the difference between the variables from #2
 
-4) Assign steps 1-3 to individual variables, then combine them into a list
-
-5) Create a new data object of with 2 columns: body mass and flipper length 
-for all penguins, then plot them against each other using the `plot()` function. 
-(hint: for tidyverse, check the documentation for `select()`)
+4) Create a new data object of with 2 columns: body mass and flipper length 
+for all penguins, then plot them against each other using the `plot()` function
 
 
 
