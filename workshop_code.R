@@ -24,7 +24,8 @@
 5 / 5  # Division
 5 ^ 5  # Exponentiation (or **)
 log(100) # Natural log
-6*4/(2^2*3)-2 # PEMDAS
+6/3*4 # PEMDAS
+6/(3*4)
 
 # R follows the basic order of operations (PEMDAS), so be sure to use parentheses
 # where necessary.
@@ -150,18 +151,18 @@ sd(c(1, 2, 3)) # note that the argument is not named in this case
 # operator '<-'.
 
 # Create a numeric vector object
-e <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+nums <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
 # Hand calculate the mean
-sum(e) / length(e)
+sum(nums) / length(nums)
 
 # R functions to calculate the mean
-mean(e) 
+mean(nums) 
 
 # Make a dataframe object
-e <- data.frame(x = 1:5,
+nums <- data.frame(x = 1:5,
                 y = 11:15)
-e
+nums
 
 # Get the mean of the y column
 mean(y)
@@ -169,7 +170,7 @@ mean(y)
 # Notice that the previous line returns an error: "object 'y' not found". This is
 # because it is not in the global environment. You need to use the '$' operator 
 # to access the y column in the dataframe.
-mean(e$y)
+mean(nums$y)
 
 # R will look for named objects in the environment, since 'y' wasn't in the 
 # environment, it gave up and returned an error.
@@ -234,7 +235,7 @@ vec[c(1, 3, 5)]
 # Return all values EXCEPT the first thrid and fifth elements
 vec[-c(1, 3, 5)]
 
-# Return all values greate than 30
+# Return all values greater than 30
 vec[vec > 30]
 
 
@@ -293,11 +294,11 @@ setwd("C:/path/to/your/folder")
 #    choice using the `rnorm()` function and assign it to a variable named `vec` 
 #    (hint: use `?rnorm` to read the argument descriptions).
 
-# 3) Get summary statistics for the vector using the describe() function.
+# 3) Use `[]` indexing to return the first 10 values of the vector
 
-# 4) Use [] indexing to return the first 10 values of the vector.
+# 4) Use `[]` indexing to return three values at varying positions
 
-# 5) Plot your data using the plot() function. 
+# 5) Get summary statistics for the vector using the `describe()` function
 
 
 
@@ -413,21 +414,32 @@ penguins |>
   filter(sex == 'male', species == 'Chinstrap', year > 2007) |>
   summarise(mean_mass= mean(body_mass_g, na.rm = TRUE))
 
+# Plotting With R--------------------------------------------------------------
+
+# Base plotting
+# You can use base R to plot data
+plot(penguins$bill_length_mm, penguins$bill_depth_mm, col = penguins$species)
+
+# Or we can use different packages to plot and customize our plots
+library(ggplot2)
+
+ggplot(data = penguins, mapping = aes(x = penguins$bill_length_mm,
+                                      y = penguins$bill_depth_mm,
+                                      color = species)) +
+  geom_point()
+
 
 # Your Turn---------------------------------------------------------------------
 
-# 1) Find the minimum value of flipper_length_mm
+# 1) Find the average value of `flipper_length_mm`
 
-# 2) Find the maximum value of body_mass_g
+# 2) Extract the species column using `$` then `select()` and assign each to a variable
+# (hint: for tidyverse, check the documentation for `select()`)
 
-# 3) Filter the data by selecting any two columns using the column position or $ operator
+# 3) Inspect the difference between the variables from #2
 
-# 4) Assign steps 1-3 to individual variables
-
-
-# BONUS) Create a new data object of with 2 columns: body mass and flipper length 
-# for all penguins, then plot them against each other using the plot() function. 
-# (hint: for tidyverse, check the documentation for select())
+# 4) Create a new data object of with 2 columns: body mass and flipper length 
+#    for all penguins, then plot them against each other using the `plot()` function. 
 
 
 
